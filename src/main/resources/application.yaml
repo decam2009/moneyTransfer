@@ -1,0 +1,6 @@
+server:
+  port: 5500
+  error:
+    include-message: always
+    include-exception: true
+    include-stacktrace: never

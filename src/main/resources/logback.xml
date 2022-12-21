@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<configuration>
+    <appender name="File" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>./logs/app.log</file>
+        <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+            <Pattern>%p %d : %msg%n%throwable</Pattern>
+        </encoder>
+        <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
+            <fileNamePattern>./logs/%d{dd-MM-yyyy}.%i.log</fileNamePattern>
+            <maxFileSize>10Mb</maxFileSize>
+        </rollingPolicy>
+    </appender>
+    <root level="INFO">
+        <appender-ref ref="File"/>
+    </root>
+
+</configuration>

@@ -1,0 +1,15 @@
+version: '1'
+services:
+  nodejs:
+    image: 'transfer_front:latest'
+    ports:
+      - '3000:3000'
+    depends_on:
+      - transfer_java
+    links:
+      - transfer_java
+
+  transfer_java:
+    image: 'transfer_back:latest'
+    ports:
+      - '5500:5500'
