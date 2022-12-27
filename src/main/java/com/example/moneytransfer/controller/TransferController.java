@@ -2,7 +2,9 @@ package com.example.moneytransfer.controller;
 
 import com.example.moneytransfer.model.Card;
 import com.example.moneytransfer.model.Operation;
-import com.example.moneytransfer.service.TransferRepositoryImpl;
+import com.example.moneytransfer.repository.TransferRepositoryImpl;
+import jakarta.validation.Valid;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -19,13 +21,13 @@ public class TransferController {
 
     @PostMapping(value = "/transfer")
     @CrossOrigin("http://localhost:3000")
-    public void transfer(@RequestBody Card card) {
+    public void transfer(@Valid @RequestBody Card card) {
         repo.transfer(card);
     }
 
     @PostMapping(value = "/confirmOperation")
     @CrossOrigin("http://localhost:3000")
-    public void confirm(@RequestBody Operation operation) {
+    public void confirm(@Valid @RequestBody Operation operation) {
         repo.confirmOperation(operation);
     }
 }
