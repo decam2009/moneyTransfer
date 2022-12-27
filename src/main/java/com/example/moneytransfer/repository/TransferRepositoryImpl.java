@@ -13,6 +13,7 @@ public class TransferRepositoryImpl implements TransferRepository {
 
     private static final ConcurrentHashMap<String, Card> transferStorage = new ConcurrentHashMap<>();
 
+
     @Override
     public void transfer(Card card) {
         log.info("Operation:%s %s %s %d %s".formatted(card.getCardFromNumber(),
