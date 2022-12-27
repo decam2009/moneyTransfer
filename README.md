@@ -18,17 +18,18 @@
   - Пользователь может через клиентский интерфейс (демо front end: https://serp-ya.github.io/card-transfer/) выполнить перевод с карты на карту
   - Пример запроса методом POST: http://localhost:5500/transfer
   - Пример тела запроса: 
-  {
-  "cardFromNumber": "1111111111111111",
-  "cardFromValidTill": "11/28",
-  "cardFromCVV": "111",
-  "cardToNumber": "2222222222222222",
-  "amount": {
-    "value": 10000,
-    "currency": "RUB"
-  }
+  ```
+{
+    "cardFromNumber": "4875130166305242",
+    "cardFromValidTill": "05/26",
+    "cardFromCVV": "166",
+    "cardToNumber": "4832137002407290",
+    "amount": {
+        "value": 100,
+        "currency": "RUB"
+    }
 }
-
+```
 #### Получение кода подтверждения успешной транзакции
 
   - При успешном переводе для подтверждения транзакции передается сгенерированный operationId.
