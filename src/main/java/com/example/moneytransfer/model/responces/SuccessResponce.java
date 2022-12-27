@@ -4,10 +4,10 @@ import com.example.moneytransfer.model.Operation;
 import lombok.Data;
 
 @Data
-public class TransferResponce {
+public class SuccessResponce {
     String operationId;
 
-    public TransferResponce() {
+    public SuccessResponce() {
         this.operationId = Operation.generateId();
     }
 }
