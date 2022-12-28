@@ -5,6 +5,8 @@ import jakarta.validation.constraints.*;
 import lombok.Data;
 import org.hibernate.validator.constraints.CreditCardNumber;
 
+import java.beans.Transient;
+
 @Data
 public class Card {
     @NotBlank

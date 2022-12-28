@@ -29,12 +29,17 @@ public class TransferRepositoryImpl implements TransferRepository {
     }
 
     @Override
-    public void save(Card card) {
-        transferStorage.put(Operation.generateId(), card);
+    public void save(String operationId, Card card) {
+        transferStorage.put(operationId, card);
     }
 
     @Override
-    public Card findOperationById(String operationId) {
-        return transferStorage.get(operationId);
+    public Boolean findOperationById(String operationId) {
+        Card card = transferStorage.get(operationId);
+        if (card != null) {
+            return true;
+        } else {
+            throw new NullPointerException();
+        }
     }
 }

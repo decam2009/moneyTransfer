@@ -5,4 +5,4 @@ server:
     include-exception: true
     include-stacktrace: never
 file:
-  path: "storage.txt"
+  path: "logs/storage.txt"

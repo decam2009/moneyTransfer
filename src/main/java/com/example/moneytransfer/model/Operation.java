@@ -10,20 +10,12 @@ import java.util.concurrent.atomic.AtomicInteger;
 @Data
 public class Operation {
     @NotNull
-    private static AtomicInteger operationId = new AtomicInteger();
+    private String operationId;
     @NotBlank
     @Size(max = 4)
     private String code;
 
-    public static String generateId() {
-        return String.valueOf(operationId.incrementAndGet());
-    }
-
-    public Operation() {
-        generateId();
-    }
-
     public String getOperationId() {
-        return String.valueOf(operationId);
+        return operationId;
     }
 }

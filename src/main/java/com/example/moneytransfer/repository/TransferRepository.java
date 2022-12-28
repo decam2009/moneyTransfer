@@ -7,8 +7,8 @@ public interface TransferRepository {
     void transfer (Card card);
     void confirmOperation (Operation operation);
 
-    void save (Card card);
+    void save (String operationId,  Card card);
 
-    Card findOperationById (String operationId);
+    Boolean findOperationById (String operationId);
 
 }

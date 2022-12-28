@@ -9,6 +9,7 @@ import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 
+import java.nio.file.FileAlreadyExistsException;
 import java.util.MissingFormatArgumentException;
 
 @RestControllerAdvice
@@ -23,7 +24,8 @@ public class ResponseStatusAdvice {
         return new ResponseEntity<>(errorResponse, HttpStatus.BAD_REQUEST);
     }
 
-    @ExceptionHandler({NullPointerException.class, UnexpectedTypeException.class, MissingFormatArgumentException.class})
+    @ExceptionHandler({NullPointerException.class, UnexpectedTypeException.class, MissingFormatArgumentException.class,
+            FileAlreadyExistsException.class})
     public ResponseEntity<ErrorResponse> handleNullPointerException() {
         ErrorResponse errorResponse = new ErrorResponse(MESSAGE500, HttpStatus.INTERNAL_SERVER_ERROR.value());
         return new ResponseEntity<>(errorResponse, HttpStatus.INTERNAL_SERVER_ERROR);
