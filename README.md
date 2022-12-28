@@ -8,7 +8,6 @@
    - Framework: Spring Boot
    - Управление проектом: Maven
    - Управление версиями: github
-   - Тестирование: Mock
    - Порт работы back end: 5500
    - Настройки: application.yml
    
